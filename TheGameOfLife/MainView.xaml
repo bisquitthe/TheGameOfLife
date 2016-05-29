@@ -11,9 +11,12 @@
             <Grid Background="AliceBlue" Height="40">
                 <Button x:Name="animateBtn" Command="{Binding AnimateBtnClickCommand}" Content="Animate" HorizontalAlignment="Left" Margin="116,10,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button x:Name="nextBtn" Command="{Binding NextBtnClickCommand}" Content="Next" HorizontalAlignment="Left" Margin="213,10,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="cleraBtn" Content="Clear" Command="{Binding ClearBtnClickCommand}" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Width="75"/>
                 <Label x:Name="label" Content="Generation:" HorizontalAlignment="Left" Margin="328,7,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="generationLbl" Content="{Binding Generation}" HorizontalAlignment="Left" Margin="404,7,0,0" VerticalAlignment="Top" Height="26" Width="53"/>
-                <Button x:Name="cleraBtn" Content="Clear" Command="{Binding ClearBtnClickCommand}" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Width="75"/>
+                <Label x:Name="label1" Content="Speed: " HorizontalAlignment="Left" Margin="478,7,0,0" VerticalAlignment="Top"/>
+                <Slider x:Name="speedSlider" Maximum="100" Minimum="1" Value="{Binding Speed}" HorizontalAlignment="Left" Margin="532,12,0,0" VerticalAlignment="Top" Width="102"/>
+
             </Grid>
         </DockPanel>
         <Grid x:Name="Board" Background="Bisque" Loaded="Board_Loaded"/>

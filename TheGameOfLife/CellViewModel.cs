@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -31,13 +32,27 @@ namespace TheGameOfLife
             }
         }
 
+        public int Speed
+        {
+            get { return _speed; }
+            set
+            {
+                _speed = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("State"));
+            }
+        }
+
+        private int _speed;
+        public ICommand CellClickCommand { get; private set; }
+        public ICommand NextBtnClickCommand { get; private set; }
+        public ICommand AnimateBtnClickCommand { get; private set; }
+        public ICommand ClearBtnClickCommand { get; private set; }
+
         private Cell[] _lastGeneration;
         private int _generationNum;
         private volatile bool _animateRunning;
-        public ICommand CellClickCommand { get;private set; }
-        public ICommand NextBtnClickCommand { get;private set; }
-        public ICommand AnimateBtnClickCommand { get;private set; }
-        public ICommand ClearBtnClickCommand { get; private set; }
+        
 
         public CellViewModel()
         {
@@ -56,7 +71,6 @@ namespace TheGameOfLife
             Border cell = cellChild as Border;
             int row = Grid.GetRow(cell);
             int column = Grid.GetColumn(cell);
-            int livingCount = 0;
             PresentGeneration[row*RowsCount + column].State = !PresentGeneration[row*RowsCount + column].State;
         }
 
@@ -79,13 +93,13 @@ namespace TheGameOfLife
 
         private void StartAnimating()
         {
-            bool stateChanging = false;
             _animateRunning = true;
             do
             {
-                stateChanging = NextGeneration();
-                Thread.Sleep(35);
-            } while (stateChanging && _animateRunning);
+                if (!NextGeneration())
+                    _animateRunning = false;
+                Thread.Sleep(100 - Speed);
+            } while (_animateRunning);
         }
 
         private bool NextGeneration()
@@ -180,10 +194,12 @@ namespace TheGameOfLife
         private void ClearBoard()
         {
             Generation = 0;
+            _animateRunning = false;
             foreach (var cell in PresentGeneration)
             {
                 cell.State = false;
             }
+            _lastGeneration = PresentGeneration.ToArray();
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }
