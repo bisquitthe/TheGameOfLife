@@ -44,7 +44,7 @@ namespace TheGameOfLife
                     Board.Children.Add(border);
 
                     commandHandler.SetBinding(Button.CommandProperty, "CellClickCommand");
-                    commandHandler.SetBinding(Button.OpacityProperty, String.Format("PresentGeneration[{0}].State", i*CellViewModel.RowsCount+j));
+                    commandHandler.SetBinding(Button.OpacityProperty, String.Format("Board[{0}].State", i*CellViewModel.RowsCount+j));
                     commandHandler.CommandParameter = border;
                 }
             }

@@ -5,19 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheGameOfLife"
         mc:Ignorable="d"
-        Title="MainWindow" Width="650" Height="650" ResizeMode="NoResize">
+        Title="Conway's Game of life" Width="800" Height="800" ResizeMode="NoResize">
     <DockPanel>
         <DockPanel Dock="Top">
-            <Grid Background="AliceBlue" Height="40">
-                <Button x:Name="animateBtn" Command="{Binding AnimateBtnClickCommand}" Content="Animate" HorizontalAlignment="Left" Margin="116,10,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button x:Name="nextBtn" Command="{Binding NextBtnClickCommand}" Content="Next" HorizontalAlignment="Left" Margin="213,10,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button x:Name="cleraBtn" Content="Clear" Command="{Binding ClearBtnClickCommand}" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Width="75"/>
-                <Label x:Name="label" Content="Generation:" HorizontalAlignment="Left" Margin="328,7,0,0" VerticalAlignment="Top"/>
-                <Label x:Name="generationLbl" Content="{Binding Generation}" HorizontalAlignment="Left" Margin="404,7,0,0" VerticalAlignment="Top" Height="26" Width="53"/>
-                <Label x:Name="label1" Content="Speed: " HorizontalAlignment="Left" Margin="478,7,0,0" VerticalAlignment="Top"/>
-                <Slider x:Name="speedSlider" Maximum="100" Minimum="1" Value="{Binding Speed}" HorizontalAlignment="Left" Margin="532,12,0,0" VerticalAlignment="Top" Width="102"/>
-
-            </Grid>
+            <StackPanel Orientation="Horizontal" Height="33">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="20,5,5,5"></Setter>
+                        <Setter Property="Width" Value="60"></Setter>
+                    </Style>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="Margin" Value="20,3,1,5"></Setter>
+                    </Style>
+                </StackPanel.Resources>
+                <Button x:Name="animateBtn" Command="{Binding AnimateBtnClickCommand}" Content="Animate" HorizontalAlignment="Right"/>
+                <Button x:Name="nextBtn" Command="{Binding NextBtnClickCommand}" Content="Next" HorizontalAlignment="Right"/>
+                <Button x:Name="cleraBtn" Content="Clear" Command="{Binding ClearBtnClickCommand}" HorizontalAlignment="Right"/>
+                <Label x:Name="label" Content="Generation:" HorizontalAlignment="Right"/>
+                <Label x:Name="generationLbl" Content="{Binding Generation}" HorizontalAlignment="Right" Width="56" Margin="0,3,1,5"/>
+                <Label x:Name="label1" Content="Speed: " HorizontalAlignment="Right"/>
+                <Slider x:Name="speedSlider" Maximum="100" Minimum="1" Value="{Binding Speed}" HorizontalAlignment="Right" Width="138" Margin="2,7,1,5"/>
+            </StackPanel>
         </DockPanel>
         <Grid x:Name="Board" Background="Bisque" Loaded="Board_Loaded"/>
     </DockPanel>

@@ -16,8 +16,7 @@ namespace TheGameOfLife
         public static int ColumnsCount { get; private set; }
         public static int RowsCount { get; private set; }
 
-        public ObservableCollection<Cell> PresentGeneration { get; private set; }
-        private ObservableCollection<Cell> _presentGeneration;
+        public ObservableCollection<Cell> Board { get; private set; }
         public int Generation
         {
             get
@@ -58,7 +57,7 @@ namespace TheGameOfLife
         {
             ColumnsCount = 40;
             RowsCount = 40;
-            PresentGeneration = new ObservableCollection<Cell>();
+            Board = new ObservableCollection<Cell>();
             InitBoard();
             CellClickCommand = new GalaSoft.MvvmLight.Command.RelayCommand<object>(CellClickMethod);
             NextBtnClickCommand = new RelayCommand(NextBtnClickMethod);
@@ -68,15 +67,17 @@ namespace TheGameOfLife
 
         private void CellClickMethod(object cellChild)
         {
+            Cell temp;
             Border cell = cellChild as Border;
             int row = Grid.GetRow(cell);
             int column = Grid.GetColumn(cell);
-            PresentGeneration[row*RowsCount + column].State = !PresentGeneration[row*RowsCount + column].State;
+            temp = Board[row*RowsCount + column];
+            temp.State = !temp.State;
         }
 
         private void NextBtnClickMethod()
         {
-            NextGeneration();
+            Task.Run(() => NextGeneration());
         }
 
         private void AnimateBtnClickMethod()
@@ -106,12 +107,12 @@ namespace TheGameOfLife
         {
             bool stateChanged = false;
             List<Cell> PresentGenerationClones = new List<Cell>();
-            foreach (var pgc in PresentGeneration)
+            foreach (var pgc in Board)
             {
                 PresentGenerationClones.Add(pgc.GetClone());
             }
             _lastGeneration = PresentGenerationClones.ToArray();
-            foreach (var cell in PresentGeneration)
+            foreach (var cell in Board)
             {
                 if (cell.ToBeOrNotToBe(GetNeighbors(cell)))
                     stateChanged = true;
@@ -162,10 +163,10 @@ namespace TheGameOfLife
 
         private Cell GetPresentCellByRowColumn(int row, int column)
         {
-            for (int i = 0;i<PresentGeneration.Count;i++)
+            for (int i = 0;i<Board.Count;i++)
             {
-                if (PresentGeneration[i].Row == row && PresentGeneration[i].Column == column)
-                    return PresentGeneration[i];
+                if (Board[i].Row == row && Board[i].Column == column)
+                    return Board[i];
             }
             return null;
         }
@@ -186,7 +187,7 @@ namespace TheGameOfLife
             {
                 for (int j = 0; j < ColumnsCount; j++)
                 {
-                    PresentGeneration.Add(new Cell(false, i,j));
+                    Board.Add(new Cell(false, i,j));
                 }
             }
         }
@@ -195,11 +196,11 @@ namespace TheGameOfLife
         {
             Generation = 0;
             _animateRunning = false;
-            foreach (var cell in PresentGeneration)
+            foreach (var cell in Board)
             {
                 cell.State = false;
             }
-            _lastGeneration = PresentGeneration.ToArray();
+            _lastGeneration = Board.ToArray();
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }
