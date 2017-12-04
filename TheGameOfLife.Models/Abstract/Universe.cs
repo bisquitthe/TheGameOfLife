@@ -19,5 +19,7 @@ namespace TheGameOfLife.Models.Abstract
         {
             _generationHistory.Clear();
         }
+
+        
     }
 }
