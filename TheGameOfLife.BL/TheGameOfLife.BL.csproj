@@ -41,13 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\GameService.cs" />
     <Compile Include="Services\UniverseService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TheGameOfLife.Interfaces\TheGameOfLife.Interfaces.csproj">
-      <Project>{6bf77c5d-6295-488f-b830-ae96bb9d436d}</Project>
-      <Name>TheGameOfLife.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TheGameOfLife.Models\TheGameOfLife.Models.csproj">
       <Project>{03b7c3f8-9348-414f-b75a-94cda8ac8487}</Project>
       <Name>TheGameOfLife.Models</Name>

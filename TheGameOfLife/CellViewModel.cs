@@ -7,7 +7,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.CommandWpf;
 
 namespace TheGameOfLife
 {

@@ -1,23 +1,18 @@
 ﻿using System.Collections.Generic;
 using TheGameOfLife.Models.Abstract;
+using TheGameOfLife.Models.Interfaces;
 
 namespace TheGameOfLife.Models.Universes
 {
-    public class LoopedUniverse : FiniteUniverse
+    public class LoopedUniverse : Universe
     {
-        public LoopedUniverse(int height, int width) : base(height,width)
+        public LoopedUniverse(int height, int width)
         {
-
+            _height = height;
+            _width = width;
         }
 
-        public override bool IsFinished()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override IEnumerable<Cell> GetCellNeighbors(Cell cell)
-        {
-            throw new System.NotImplementedException();
-        }
+        private int _height;
+        private int _width;
     }
 }

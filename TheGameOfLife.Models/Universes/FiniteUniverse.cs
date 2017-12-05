@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using TheGameOfLife.Models.Abstract;
+using TheGameOfLife.Models.Interfaces;
 
 namespace TheGameOfLife.Models.Universes
 {
@@ -7,21 +9,11 @@ namespace TheGameOfLife.Models.Universes
     {
         public FiniteUniverse(int height, int width)
         {
-            Height = height;
-            Width = width;
+            _height = height;
+            _width = width;
         }
 
-        public int Height { get; }
-        public int Width { get; }
-
-        public override bool IsFinished()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override IEnumerable<Cell> GetCellNeighbors(Cell cell)
-        {
-            throw new System.NotImplementedException();
-        }
+        private int _height;
+        private int _width;
     }
 }

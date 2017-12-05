@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGameOfLife", "TheGameOfLife\TheGameOfLife.csproj", "{53C9A59A-8D33-4608-8FF7-8AB33FC4FD7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGameOfLife.Interfaces", "TheGameOfLife.Interfaces\TheGameOfLife.Interfaces.csproj", "{6BF77C5D-6295-488F-B830-AE96BB9D436D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGameOfLife.Models", "TheGameOfLife.Models\TheGameOfLife.Models.csproj", "{03B7C3F8-9348-414F-B75A-94CDA8AC8487}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGameOfLife.BL", "TheGameOfLife.BL\TheGameOfLife.BL.csproj", "{838C7F8B-B2B8-4DA9-B6DF-DBB00BA6AD01}"
@@ -21,10 +19,6 @@ Global
 		{53C9A59A-8D33-4608-8FF7-8AB33FC4FD7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53C9A59A-8D33-4608-8FF7-8AB33FC4FD7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53C9A59A-8D33-4608-8FF7-8AB33FC4FD7C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6BF77C5D-6295-488F-B830-AE96BB9D436D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6BF77C5D-6295-488F-B830-AE96BB9D436D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6BF77C5D-6295-488F-B830-AE96BB9D436D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6BF77C5D-6295-488F-B830-AE96BB9D436D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{03B7C3F8-9348-414F-B75A-94CDA8AC8487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03B7C3F8-9348-414F-B75A-94CDA8AC8487}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03B7C3F8-9348-414F-B75A-94CDA8AC8487}.Release|Any CPU.ActiveCfg = Release|Any CPU

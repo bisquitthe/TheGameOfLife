@@ -43,10 +43,14 @@
     <Compile Include="Abstract\Cell.cs" />
     <Compile Include="Abstract\Universe.cs" />
     <Compile Include="Abstract\UniverseCreator.cs" />
-    <Compile Include="Creators\InfiniteUniverseCreator.cs" />
+    <Compile Include="Creators\FiniteUniverseCreator.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Interfaces\INeighborCalculator.cs" />
+    <Compile Include="Interfaces\IEndRule.cs" />
+    <Compile Include="MooreNeighborCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\EndIfNoOneAliveRule.cs" />
     <Compile Include="Universes\FiniteUniverse.cs" />
-    <Compile Include="Universes\InfiniteUniverse.cs" />
     <Compile Include="Universes\LoopedUniverse.cs" />
   </ItemGroup>
   <ItemGroup />

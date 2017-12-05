@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TheGameOfLife.Models.Interfaces;
 
 namespace TheGameOfLife.Models.Abstract
 {
@@ -10,16 +11,11 @@ namespace TheGameOfLife.Models.Abstract
         }
 
         protected Dictionary<int, IEnumerable<Cell>> _generationHistory;
-
-        public abstract bool IsFinished();
-        public abstract IEnumerable<Cell> GetCellNeighbors(Cell cell);
         public IReadOnlyDictionary<int, IEnumerable<Cell>> GenerationHistory => _generationHistory;
 
         public void ClearGenerationHistory()
         {
             _generationHistory.Clear();
         }
-
-        
     }
 }
