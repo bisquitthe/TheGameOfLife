@@ -21,8 +21,8 @@ namespace TheGameOfLife.Models.Rules
             var lastGeneration = universe.GenerationHistory.Values.Last().ToList();
             if (penultGeneration.Count != lastGeneration.Count)
                 return false;
-            if (lastGeneration.Any(t => penultGeneration.All(c => c.IsAlive == t.IsAlive && c.Y == t.Y &&
-                                                                  c.X == t.X)))
+            if (lastGeneration.Any(t => penultGeneration.All(c => c.IsAlive == t.IsAlive && c.Coordinates.Y == t.Coordinates.Y &&
+                                                                  c.Coordinates.X == t.Coordinates.X)))
             {
                 return true;
             }

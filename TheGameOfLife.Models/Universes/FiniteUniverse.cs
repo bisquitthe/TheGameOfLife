@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TheGameOfLife.Models.Abstract;
-using TheGameOfLife.Models.Interfaces;
 
 namespace TheGameOfLife.Models.Universes
 {

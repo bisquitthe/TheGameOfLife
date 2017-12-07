@@ -1,19 +1,22 @@
 ﻿using System.Collections.Generic;
+using TheGameOfLife.Models.Interfaces;
 
 namespace TheGameOfLife.Models.Abstract
 {
     public abstract class Cell
     {
-        public Cell(int x, int y)
+        public Cell(int x, int y, INeighborCalculator neighborCalculator)
         {
-            X = x;
-            Y = y;
+            Coordinates = new Coordinates(x,y);
+            _neighborCalculator = neighborCalculator;
         }
-        public int X { get; } 
-        public int Y { get; }
+        protected INeighborCalculator _neighborCalculator { get; set; }
+        public Coordinates Coordinates { get; }
         public bool IsAlive { get; protected set; }
         public abstract void Die();
         public abstract void Animate();
-        public IEnumerable<Cell> Neighbors { get; }
+        public int NeighborRank { get; set; }
+
+        public IEnumerable<Coordinates> SupposedNeighbors => _neighborCalculator.GetNeighbors(Coordinates, NeighborRank);
     }
 }

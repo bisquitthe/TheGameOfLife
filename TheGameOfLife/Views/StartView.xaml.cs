@@ -17,9 +17,9 @@ namespace TheGameOfLife.Views
     /// <summary>
     /// Interaction logic for SettingsView.xaml
     /// </summary>
-    public partial class SettingsView : Window
+    public partial class StartView : Window
     {
-        public SettingsView()
+        public StartView()
         {
             InitializeComponent();
         }

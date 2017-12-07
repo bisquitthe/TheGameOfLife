@@ -43,8 +43,10 @@
     <Compile Include="Abstract\Cell.cs" />
     <Compile Include="Abstract\Universe.cs" />
     <Compile Include="Abstract\UniverseCreator.cs" />
+    <Compile Include="Coordinates.cs" />
     <Compile Include="Creators\FiniteUniverseCreator.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Interfaces\INeighbor.cs" />
     <Compile Include="Interfaces\INeighborCalculator.cs" />
     <Compile Include="Interfaces\IEndRule.cs" />
     <Compile Include="Interfaces\IRuleService.cs" />

@@ -5,6 +5,6 @@ namespace TheGameOfLife.Models.Interfaces
 {
     public interface INeighborCalculator
     {
-        IEnumerable<Cell> GetCellNeighbors(Cell cell, Universe universe);
+        IEnumerable<Coordinates> GetNeighbors(Coordinates coordinates, int rank);
     }
 }

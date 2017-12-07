@@ -6,16 +6,14 @@ namespace TheGameOfLife.BL.Services
 {
     public class UniverseService
     {
-        private INeighborCalculator _neighborCalculator;
-
-        public UniverseService(INeighborCalculator neighborCalculator)
+        public UniverseService()
         {
-            _neighborCalculator = neighborCalculator;
+            
         }
 
         public IEnumerable<Cell> GetCellNeighbors(Cell cell, Universe universe)
         {
-            return _neighborCalculator.GetCellNeighbors(cell, universe);
+            return s
         }
     }
 }
