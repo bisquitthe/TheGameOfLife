@@ -3,8 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TheGameOfLife.VM"
         mc:Ignorable="d"
-        Title="SettingsView" Height="160.504" Width="268.907" SizeToContent="WidthAndHeight">
+        Title="SettingsView" Height="160.504" Width="268.907" SizeToContent="WidthAndHeight"
+        DataContext="vm:SettingsViewModel">
     <StackPanel>
         <TextBlock Margin="10,15,10,0" Text="Тип вселенной"></TextBlock>
         <ComboBox Margin="10,10,10,0"></ComboBox>

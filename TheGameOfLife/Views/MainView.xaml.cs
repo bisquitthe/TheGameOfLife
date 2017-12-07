@@ -2,8 +2,9 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using TheGameOfLife.VM;
 
-namespace TheGameOfLife
+namespace TheGameOfLife.Views
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -13,7 +14,7 @@ namespace TheGameOfLife
         public MainView()
         {
             InitializeComponent();
-            DataContext = new CellViewModel();
+            DataContext = new MainViewModel();
         }
 
         private void Board_Loaded(object sender, RoutedEventArgs e)

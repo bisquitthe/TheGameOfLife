@@ -1,4 +1,4 @@
-﻿<Window x:Class="TheGameOfLife.MainView"
+﻿<Window x:Class="TheGameOfLife.Views.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:TheGameOfLife"
         mc:Ignorable="d"
         Title="Conway's Game of life" Width="800" Height="800" ResizeMode="NoResize">
-    <DockPanel>
+    <StackPanel>
+        
         <DockPanel Dock="Top">
             <StackPanel Orientation="Horizontal" Height="33">
                 <StackPanel.Resources>
@@ -28,5 +29,5 @@
             </StackPanel>
         </DockPanel>
         <Grid x:Name="Board" Background="Bisque" Loaded="Board_Loaded"/>
-    </DockPanel>
+    </StackPanel>
 </Window>
