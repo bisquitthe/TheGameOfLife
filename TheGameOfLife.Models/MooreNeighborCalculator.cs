@@ -7,7 +7,7 @@ namespace TheGameOfLife.Models
 {
     public class MooreNeighborCalculator : INeighborCalculator
     {
-        public IEnumerable<Coordinates> GetNeighbors(Coordinates coordinates, int rank)
+        public IList<Coordinates> GetNeighbors(Coordinates coordinates, int rank)
         {
             var firstCoordinates = new Coordinates(coordinates.X - rank, coordinates.Y + rank);
             var result = new List<Coordinates>

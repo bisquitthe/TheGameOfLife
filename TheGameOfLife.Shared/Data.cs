@@ -1,7 +1,10 @@
-﻿namespace TheGameOfLife.Shared
+﻿using System;
+using TheGameOfLife.Models.Abstract;
+
+namespace TheGameOfLife.Shared
 {
-    public class Data
+    public static class  StartupData
     {
-        
+        public static Universe Universe { get; set; }
     }
 }

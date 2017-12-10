@@ -43,5 +43,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheGameOfLife.Models\TheGameOfLife.Models.csproj">
+      <Project>{03b7c3f8-9348-414f-b75a-94cda8ac8487}</Project>
+      <Name>TheGameOfLife.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

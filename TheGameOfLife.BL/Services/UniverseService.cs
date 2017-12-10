@@ -13,7 +13,7 @@ namespace TheGameOfLife.BL.Services
 
         public IEnumerable<Cell> GetCellNeighbors(Cell cell, Universe universe)
         {
-            return s
+            
         }
     }
 }

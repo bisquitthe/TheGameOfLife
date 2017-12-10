@@ -3,8 +3,8 @@ using TheGameOfLife.Models.Abstract;
 
 namespace TheGameOfLife.Models.Interfaces
 {
-    public interface INeighborCalculator
+    public interface IGameService
     {
-        IList<Coordinates> GetNeighbors(Coordinates coordinates, int rank);
+        
     }
 }

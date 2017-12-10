@@ -11,6 +11,7 @@ namespace TheGameOfLife.Models.Abstract
 
         protected Dictionary<int, IEnumerable<Cell>> _generationHistory;
         public IReadOnlyDictionary<int, IEnumerable<Cell>> GenerationHistory => _generationHistory;
+        public abstract IList<Coordinates> GetAppropriateCoordinates(IList<Coordinates> coordinates);
 
         public void ClearGenerationHistory()
         {
